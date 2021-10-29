@@ -6,7 +6,11 @@ namespace Task3
 
         public class Neuron
         {
-            private decimal weight = 0.5m;
+            private decimal weight = 0.6213709000026035563306277536m; 
+            public decimal GetWeight()
+            {
+                return weight;
+            }
 
             public decimal LastError { get; private set; }
 
@@ -37,19 +41,20 @@ namespace Task3
             decimal miles = 62.1371m;
 
             Neuron neuron = new Neuron();
-            int i = 0;
-            do
+          //  int i = 0;
+            /* do
             {
                 i++;
                 neuron.Train(km, miles);
 
                 Console.WriteLine($"Итерация: {i}\tОшибка:\t{neuron.LastError}");
             } while (neuron.LastError > neuron.Smoothing || neuron.LastError < -neuron.Smoothing);
-            Console.WriteLine("Обучение завершено!");
+            Console.WriteLine("Обучение завершено!"); */
             Console.WriteLine($"{neuron.ProcessInputData(100)} миль в {100}км");
             Console.WriteLine($"{neuron.ProcessInputData(541)} миль в {541}км");
             Console.WriteLine($"{neuron.RestoreInputData(10)} км в {100}миль");
-            Console.WriteLine(neuron.ProcessInputData(km));
+            Console.WriteLine(neuron.GetWeight());
+
             Console.ReadKey();
         }
     }
